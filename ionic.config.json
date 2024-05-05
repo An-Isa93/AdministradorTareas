@@ -1,0 +1,7 @@
+{
+  "name": "Administrador-Tareas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
