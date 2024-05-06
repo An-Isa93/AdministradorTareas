@@ -1,0 +1,23 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+     Ingresar
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <form [formGroup]="formLogin" (submit)="onSubmit()">
+      <ion-input formControlName="email" labelPlacement="stacked" label="Email" fill="outline" placeholder="email@domain.com"></ion-input>
+      <ion-input formControlName="password" fill labelPlacement="stacked" fill="outline" type="password" label="Contraseña">
+        <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+      </ion-input>
+      <ion-button type="submit" expand="block">Ingresar</ion-button>
+      <ion-label ><a [routerLink]="['/registro']">Registrarse</a></ion-label>
+      <ion-button (click)="loginWithGoogle()">Ingresar con Google</ion-button>
+    </form>
+  </div>
+</ion-content>
+

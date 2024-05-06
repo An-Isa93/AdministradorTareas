@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "login-a722a": {
+      "hosting": {
+        "app": [
+          "login-a722a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "login-a722a"
+  }
+}
