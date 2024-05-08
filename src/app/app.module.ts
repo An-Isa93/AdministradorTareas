@@ -12,9 +12,11 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { HomePage } from './home/home.page';
+import { TareasComponent } from './tareas/tareas.component';
+import { AgregarTareaComponent } from './agregar-tarea/agregar-tarea.component';
 
 @NgModule({
-  declarations: [AppComponent, RegistroComponent, LoginComponent,HomePage],
+  declarations: [AppComponent, RegistroComponent, LoginComponent, HomePage, TareasComponent, AgregarTareaComponent],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 

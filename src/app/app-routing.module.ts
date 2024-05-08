@@ -4,13 +4,15 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomePage } from './home/home.page';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
+import { TareasComponent } from './tareas/tareas.component';
+import { AgregarTareaComponent } from './agregar-tarea/agregar-tarea.component';
 
 
 const routes: Routes = [
   {
     path:'home',
     component:HomePage,
-    ...canActivate(()=> redirectUnauthorizedTo(['/login']))
+    /*...canActivate(()=> redirectUnauthorizedTo(['/login']))*/
   },
   {
     path:'login',
@@ -19,7 +21,15 @@ const routes: Routes = [
   {
     path:'registro',
     component:RegistroComponent
-  }
+  },
+  {
+    path:'tareas',
+    component: TareasComponent
+  },
+  {
+    path:'agregar-tarea',
+    component: AgregarTareaComponent
+  },
  
 ];
 
