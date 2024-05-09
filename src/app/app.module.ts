@@ -7,16 +7,16 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { initializeApp } from 'firebase/app';
 import { environment } from 'src/environments/environment';
+import { AgregarTareaComponent } from './agregar-tarea/agregar-tarea.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomePage } from './home/home.page';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
-import { HomePage } from './home/home.page';
 import { TareasComponent } from './tareas/tareas.component';
-import { AgregarTareaComponent } from './agregar-tarea/agregar-tarea.component';
 
 @NgModule({
-  declarations: [AppComponent, RegistroComponent, LoginComponent, HomePage, TareasComponent, AgregarTareaComponent],
+  declarations: [AppComponent, HomePage, AgregarTareaComponent, LoginComponent, RegistroComponent,TareasComponent, AgregarTareaComponent],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 

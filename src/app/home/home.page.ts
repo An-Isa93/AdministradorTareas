@@ -8,5 +8,6 @@ import { UserService } from '../user.service';
 export class HomePage {
 
   constructor(private userService: UserService) {}
+  title: string="Agenda Escolar";
 
 }

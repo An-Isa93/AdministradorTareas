@@ -17,7 +17,7 @@ export class RegistroComponent  implements OnInit {
       password: new FormControl()
     })
   }
-
+  title: string= "Registro";
   ngOnInit() {}
   onSubmit(){
     this.userService.register(this.formReg.value)

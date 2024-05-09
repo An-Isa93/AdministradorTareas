@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AgregarTareaComponent  implements OnInit {
 
   constructor() { }
-
+  title: string="Agregar Tarea"
   ngOnInit() {}
 
 }

@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
-import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AgregarTareaComponent } from './agregar-tarea/agregar-tarea.component';
 import { HomePage } from './home/home.page';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { TareasComponent } from './tareas/tareas.component';
-import { AgregarTareaComponent } from './agregar-tarea/agregar-tarea.component';
-
 
 const routes: Routes = [
+  {
+    path:'',
+    component: TareasComponent
+    
+  },
   {
     path:'home',
     component:HomePage,
@@ -29,7 +32,9 @@ const routes: Routes = [
   {
     path:'agregar-tarea',
     component: AgregarTareaComponent
-  },
+  }
+
+
  
 ];
 
