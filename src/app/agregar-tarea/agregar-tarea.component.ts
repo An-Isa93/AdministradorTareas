@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Tarea } from '../Tarea';
+import { TareasService } from '../tareas.service';
 
 @Component({
   selector: 'app-agregar-tarea',
@@ -7,8 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgregarTareaComponent  implements OnInit {
 
-  constructor() { }
-  title: string="Agregar Tarea"
-  ngOnInit() {}
+  ngOnInit() {};
+
+  nuevaTarea: Tarea = {nombre:'', materia: '', mes:'', anio:0, descripcion:''};
+
+  constructor (private TareasService : TareasService) { }
+  
+  agregarTarea() {
+    this.TareasService.agregarTarea(this.nuevaTarea);
+    this.nuevaTarea = { nombre: '', materia: '', descripcion: '', mes: '', anio: 0 };
+  }
 
 }

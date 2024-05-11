@@ -5,27 +5,37 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
+
 <ion-content [fullscreen]="true">
   <div class="forms">
     <form >
       <!-- Nombre de la tarea -->
-      <ion-input label="Nombre de la tarea" label-placement="floating" fill="outline"></ion-input>
+      <ion-input label="Nombre de la tarea" label-placement="floating" fill="outline" name="nombre" [(ngModel)]="nuevaTarea.nombre"></ion-input>
       <br />
       <!-- Descripcion -->
       <ion-label>Descripción:</ion-label>
-      <ion-textarea fill="outline" rows="3"></ion-textarea>
+      <ion-textarea fill="outline" rows="3" name="descripcion" [(ngModel)]="nuevaTarea.descripcion"></ion-textarea>
       <br />
       <!-- Fecha de entrega -->
       <ion-label position="floating">Fecha de entrega</ion-label>
       <div class="fecha">
         <!-- Mes -->
-        <ion-select placeholder="Mes">
+        <ion-select placeholder="Mes" name="mes" [(ngModel)]="nuevaTarea.mes">
           <ion-select-option value="Enero">Enero</ion-select-option>
           <ion-select-option value="Febrero">Febrero</ion-select-option>
           <ion-select-option value="Marzo">Marzo</ion-select-option>
+          <ion-select-option value="Abril">Abril</ion-select-option>
+          <ion-select-option value="Mayo">Mayo</ion-select-option>
+          <ion-select-option value="Junio">Junio</ion-select-option>
+          <ion-select-option value="Julio">Julio</ion-select-option>
+          <ion-select-option value="Agosto">Agosto</ion-select-option>
+          <ion-select-option value="Septiembre">Septiembre</ion-select-option>
+          <ion-select-option value="Octubre">Octubre</ion-select-option>
+          <ion-select-option value="Noviembre">Noviembre</ion-select-option>
+          <ion-select-option value="Diciembre">Diciembre</ion-select-option>
         </ion-select>
         <!-- Año -->
-        <ion-select placeholder="Año">
+        <ion-select placeholder="Año" name="anio" [(ngModel)]="nuevaTarea.anio">
           <ion-select-option value="2024">2024</ion-select-option>
           <ion-select-option value="2025">2025</ion-select-option>
           <ion-select-option value="2026">2026</ion-select-option>
@@ -33,11 +43,11 @@
       </div>
       <br />
       <!-- Materia -->
-      <ion-input label="Materia" label-placement="floating" fill="outline"></ion-input>
+      <ion-input label="Materia" label-placement="floating" fill="outline" name="materia" [(ngModel)]="nuevaTarea.materia"></ion-input>
       <br />
       <!-- Boton de agregar -->
       <div class="boton">
-        <ion-button class="botonAgregar" type="submit">Agregar Tarea</ion-button>
+        <ion-button (click)="agregarTarea()" class="botonAgregar" type="submit">Agregar Tarea</ion-button>
       </div>
     </form>
   </div>

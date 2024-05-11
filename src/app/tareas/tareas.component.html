@@ -5,22 +5,35 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content>
-<ion-card>
-  <ion-card-header>
-    <ion-card-subtitle>Materia</ion-card-subtitle>
-    <br />
-    <ion-card-title>Nombre de la tarea</ion-card-title>
-  </ion-card-header>
 
-  <ion-card-content>
-    <div class="fecha">
-      <p>Fecha:</p>
-    </div>  
-  </ion-card-content>
+<ion-content [fullscreen]="true">  
+  <div class="forms">
+    <ion-card *ngFor="let tarea of tareas; let i = index">
 
-  <ion-button class="botonVerMas" expand="block" fill="clear">+ Ver más detalles</ion-button>
-</ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>{{tarea.materia}}</ion-card-subtitle>
+        <br />
+        <ion-card-title>{{tarea.nombre}}</ion-card-title>
+        <ion-button (click)="eliminarTarea(i)" fill="clear" class="eliminar">Eliminar</ion-button>
+      </ion-card-header> 
+      
+      <ion-card-content>
+        <div class="fechaTarjeta">
+          <p class="txt">Fecha:  </p>
+          <p class="fecha">{{tarea.mes}} {{tarea.anio}}</p>
+        </div>
+      </ion-card-content>
+
+      <ion-accordion-group>
+        <ion-accordion value="detalles">
+          <ion-item slot="header" color="light">
+            <ion-label class="verMas">+ Ver más detalles</ion-label>
+          </ion-item>
+          <div class="descripcion" slot="content">{{tarea.descripcion}}</div>
+        </ion-accordion>
+      </ion-accordion-group>
+    </ion-card>
+  </div>
+  
 </ion-content>
-
 

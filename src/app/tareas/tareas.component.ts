@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Tarea } from '../Tarea';
+import { TareasService } from '../tareas.service';
 
 @Component({
   selector: 'app-tareas',
@@ -7,8 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TareasComponent  implements OnInit {
 
-  constructor() { }
+  tareas: Tarea[] = [];
+  
+  constructor (private TareasService : TareasService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.tareas = this.TareasService.obtenerTareas();
+  }
+
+  eliminarTarea(index: number) {
+    console.log("Index a eliminar:", index);
+    this.TareasService.eliminarTarea(index);
+  }
 
 }

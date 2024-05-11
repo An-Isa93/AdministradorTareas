@@ -14,6 +14,7 @@ import { HomePage } from './home/home.page';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { TareasComponent } from './tareas/tareas.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, HomePage, AgregarTareaComponent, LoginComponent, RegistroComponent,TareasComponent, AgregarTareaComponent],
@@ -22,6 +23,7 @@ import { TareasComponent } from './tareas/tareas.component';
     IonicModule.forRoot(), 
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     provideFirebaseApp(()=>initializeApp(environment.firebaseConfig)),
     provideAuth(()=>getAuth())
   ],

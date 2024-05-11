@@ -1,0 +1,34 @@
+ion-card-header {
+    display: flex;
+    justify-content: center;
+}
+
+ion-card-title {
+    width: 73%;
+}
+
+.forms {
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.verMas {
+    display: flex;
+    justify-content: center;
+}
+
+.descripcion {
+    padding: 5%;
+}
+
+.fechaTarjeta {
+    display: flex;
+}
+
+.eliminar {
+    position: fixed;
+    padding-left: 65%;
+    padding-bottom: 15%;
+    color: red;
+    font-size: 15px;
+}
