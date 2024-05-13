@@ -22,7 +22,8 @@ export class LoginComponent  implements OnInit {
     this.userService.login(this.formLogin.value)
     .then(response=>{
       console.log(response);
-      this.router.navigateByUrl('/home');
+      this.router.navigate(['/tareas']);
+     alert("login");
     })
     .catch(error => alert("Usuario o Contraseña incorrectas"));
   }
@@ -30,7 +31,7 @@ export class LoginComponent  implements OnInit {
     this.userService.loginWithGoogle()
       .then(response => {
         console.log(response);
-        this.router.navigateByUrl('/home');
+        this.router.navigate(['/tareas']);
       })
       .catch(error => alert("Error"));
   }

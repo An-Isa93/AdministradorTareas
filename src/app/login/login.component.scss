@@ -1,3 +1,6 @@
+ion-content{
+    --background: #b1d4cf;
+}
 form{
     margin-left: 2%;
     margin-right: 2%;
@@ -5,12 +8,39 @@ form{
     
 }
 .container{
-    margin-left: 4%;
-    margin-top: 2%;
+    margin-left: 25%;
+    margin-top: 4%;
     margin-right: 4%;
-    border: 1px solid black;
+    border: 2px solid #7ad1c4;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 70%;
+    width: 50%;
+    padding: 20px;
+    background:rgb(255, 253, 253);
+    border-radius: 20px;
   
 }
 ion-input{
     margin-bottom: 2%;
+    
+}
+
+ion-button{
+    margin-bottom: 2%;
+    --background: #7ad1c4;
+    --color:white;
+    font-weight: bolder;
+    font-size: 15px;
+
+}
+ion-icon{
+    margin-right: 2%;
+}
+.btn-login{
+    width:300px;
+    margin-left: 25%;
+    display: block;
+    height: 45px;
 }
