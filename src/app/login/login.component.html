@@ -4,8 +4,8 @@
   <div class="container">
     <form [formGroup]="formLogin" (submit)="onSubmit()">
       <ion-button shape="round" class="btn-login" (click)="loginWithGoogle()"><ion-icon name="logo-google"></ion-icon> Ingresar con Google</ion-button>
-      <ion-input  formControlName="email" labelPlacement="stacked" label="Email" fill="outline" shape="round" placeholder="email@domain.com"></ion-input>
-      <ion-input formControlName="password" fill labelPlacement="stacked" fill="outline" type="password" shape="round"  label="Contraseña">
+      <ion-input  formControlName="email" labelPlacement="stacked" label="Email" fill="outline" placeholder="email@domain.com"></ion-input>
+      <ion-input formControlName="password" fill labelPlacement="stacked" fill="outline" type="password" label="Contraseña">
         <ion-input-password-toggle slot="end"></ion-input-password-toggle>
       </ion-input>
       <ion-button type="submit" shape="round" class="btn-login">Ingresar</ion-button>
