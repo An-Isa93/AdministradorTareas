@@ -5,12 +5,37 @@ form{
     
 }
 .container{
-    margin-left: 4%;
-    margin-top: 2%;
-    margin-right: 4%;
-    border: 1px solid black;
+    margin-left: 15%;
+    margin-top: 6%;
+    margin-right: 15%;
+   border: 2px solid #d0d8d7;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 60%;
+    width: 70%;
+    padding: 20px;
+    background:rgb(255, 253, 253);
+    border-radius: 20px;
   
 }
 ion-input{
+    margin-bottom: 3%;
+}
+ion-button{
+    margin-bottom: 3%;
+    --background: #212b29;
+    --color:white;
+    font-weight: bolder;
+    font-size: 15px;
+    margin-left: 2%;
+    display: block;
+    height: 45px;
+    margin-top: 2%;
+
+}
+.logo
+{
+    width: 25%;
     margin-bottom: 2%;
 }

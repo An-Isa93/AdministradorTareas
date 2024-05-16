@@ -3,13 +3,13 @@
 <ion-content [fullscreen]="true">
   <div class="container">
     <form [formGroup]="formLogin" (submit)="onSubmit()">
-      <ion-button shape="round" class="btn-login" (click)="loginWithGoogle()"><ion-icon name="logo-google"></ion-icon> Ingresar con Google</ion-button>
+      <ion-button shape="round" expand="full" class="btn-google" (click)="loginWithGoogle()"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVUWxgoGVSlsZFO23S42MQOHSXpx7PHW-81n97ZsGm4g&s" class="google-icon">Ingresar con Google</ion-button>
       <ion-input  formControlName="email" labelPlacement="stacked" label="Email" fill="outline" placeholder="email@domain.com"></ion-input>
       <ion-input formControlName="password" fill labelPlacement="stacked" fill="outline" type="password" label="Contraseña">
         <ion-input-password-toggle slot="end"></ion-input-password-toggle>
       </ion-input>
-      <ion-button type="submit" shape="round" class="btn-login">Ingresar</ion-button>
       <ion-label><a [routerLink]="['/registro']">¿Aun no tienes cuenta? registrate</a></ion-label>
+      <ion-button type="submit" shape="round" expand="full" class="btn-login">Ingresar</ion-button>
     </form>
   </div>
 </ion-content>
