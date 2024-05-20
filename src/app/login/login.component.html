@@ -1,5 +1,4 @@
 
-
 <ion-content [fullscreen]="true">
   <div class="container">
     <form [formGroup]="formLogin" (submit)="onSubmit()">
@@ -8,11 +7,12 @@
       <ion-input formControlName="password" fill labelPlacement="stacked" fill="outline" type="password" label="Contraseña">
         <ion-input-password-toggle slot="end"></ion-input-password-toggle>
       </ion-input>
-      <ion-label><a [routerLink]="['/registro']">¿Aun no tienes cuenta? registrate</a></ion-label>
+    <a [routerLink]="['/registro']">¿Aun no tienes cuenta? registrate</a>
       <ion-button type="submit" shape="round" expand="full" class="btn-login">Ingresar</ion-button>
     </form>
   </div>
 </ion-content>
+
 
 
 

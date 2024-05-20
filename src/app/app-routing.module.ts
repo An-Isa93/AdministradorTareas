@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AgregarTareaComponent } from './agregar-tarea/agregar-tarea.component';
 import { HomePage } from './home/home.page';
@@ -15,7 +16,8 @@ const routes: Routes = [
   {
     path:'home',
     component:HomePage,
-    /*...canActivate(()=> redirectUnauthorizedTo(['/login']))*/
+    ...canActivate(()=> redirectUnauthorizedTo(['/login']))
+  
   },
   {
     path:'login',

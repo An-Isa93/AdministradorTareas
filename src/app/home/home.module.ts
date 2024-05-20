@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { AgregarTareaComponent } from '../agregar-tarea/agregar-tarea.component';
 import { LoginComponent } from '../login/login.component';
 import { RegistroComponent } from '../registro/registro.component';
 import { TareasComponent } from '../tareas/tareas.component';
@@ -16,6 +17,7 @@ import { HomePage } from './home.page';
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage,TareasComponent,LoginComponent,RegistroComponent]
+
+  declarations: [HomePage,TareasComponent,AgregarTareaComponent,LoginComponent,RegistroComponent]
 })
 export class HomePageModule {}

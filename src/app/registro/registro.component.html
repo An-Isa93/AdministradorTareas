@@ -3,12 +3,12 @@
 <ion-content [fullscreen]="true">
   <div class="container">
     <form [formGroup]="formReg" (submit)="onSubmit()">
-      <img src="https://cdn-icons-png.flaticon.com/512/4624/4624034.png" class="logo">
+        <img src="assets/logos/LG.png" class="logo">
       <ion-input formControlName="email" labelPlacement="stacked" label="Email" fill="outline" placeholder="email@domain.com"></ion-input>
       <ion-input formControlName="password" fill labelPlacement="stacked" fill="outline" type="password" label="Contraseña">
         <ion-input-password-toggle slot="end"></ion-input-password-toggle>
       </ion-input>
-      <ion-button type="submit" shape="round" >Registro</ion-button>
+      <ion-button type="submit" shape="round">Registro</ion-button>
     </form>
   </div>
 </ion-content>
