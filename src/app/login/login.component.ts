@@ -1,9 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserService } from '../user.service';
-import { Output } from '@angular/core';
-import { EventEmitter } from '@angular/core';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -25,16 +23,18 @@ export class LoginComponent  implements OnInit {
     this.userService.login(this.formLogin.value)
     .then(response=>{
       console.log(response);
-      this.router.navigate(['/home/tareas']);
+      this.router.navigate(['tabs']);
+      
      alert("login");
     })
     .catch(error => alert("Usuario o Contraseña incorrectas"));
+
   }
   loginWithGoogle(){
     this.userService.loginWithGoogle()
       .then(response => {
         console.log(response);
-        this.router.navigate(['/tareas']);
+        this.router.navigate(['/tabs/tab1']);
       })
       .catch(error => alert("Error"));
   }

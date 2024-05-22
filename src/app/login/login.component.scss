@@ -1,60 +1,73 @@
-
-form{
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-top: 2%;
-    
+form {
+    margin: 2%;
 }
-.container{
-    margin-left: 15%;
-    margin-top: 6%;
-    margin-right: 15%;
+
+.container {
+    margin: 2% auto;
     border: 2px solid #d0d8d7;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    height: 60%;
-    width: 70%;
-    padding: 20px;
-    background:rgb(255, 253, 253);
+    height: auto; 
+    max-width: 600px; 
+    width: 90%;
+    background: rgb(255, 253, 253);
     border-radius: 20px;
-  
-}
-ion-input{
-    margin-bottom: 3%;
-    
+
 }
 
-ion-button{
+ion-input {
     margin-bottom: 3%;
+}
+
+ion-button {
     --background: #212b29;
-    --color:white;
+    --color: white;
     font-weight: bolder;
     font-size: 15px;
-  
 }
+
 .google-icon {
-    width: 24px; /* Ajusta el tamaño según sea necesario */
+    width: 24px;
     height: 24px;
-    margin-right: 8px; /* Espacio entre el icono y el texto */
-  }
-.btn-google{
-    margin-left: 2%;
+    margin-right: 8px;
+}
+
+.btn-google {
     display: block;
     height: 45px;
-    --background: white!important;
-    color:black;
+    --background: white !important;
+    color: black;
     border: 1px solid black;
     border-radius: 20px;
-   
+    margin: 1% 2%;
+    margin-bottom: 2%
 }
-ion-icon{
+
+ion-icon {
     margin-right: 2%;
 }
-.btn-login{
 
-    margin-left: 2%;
+.btn-login {
     display: block;
     height: 45px;
     margin-top: 3%;
+    margin-left: 2%;
 }
+
+.logo {
+    width: 40%;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    flex-direction: column; 
+
+}
+
+.titulo {
+    font-size: xx-large;
+    font-weight: bolder;
+}
+

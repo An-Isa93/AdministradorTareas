@@ -1,23 +1,14 @@
 import { NgModule } from '@angular/core';
-import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AgregarTareaComponent } from './agregar-tarea/agregar-tarea.component';
-import { HomePage } from './home/home.page';
+import { authGuard } from './auth/auth.guard';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
-import { TareasComponent } from './tareas/tareas.component';
 
 const routes: Routes = [
   {
-    path:'',
-    component: TareasComponent
-    
-  },
-  {
-    path:'home',
-    component:HomePage,
-    ...canActivate(()=> redirectUnauthorizedTo(['/login']))
-  
+    path: '',
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule),
+    canActivate: [authGuard]
   },
   {
     path:'login',
@@ -25,19 +16,10 @@ const routes: Routes = [
   },
   {
     path:'registro',
-    component:RegistroComponent
-  },
-  {
-    path:'tareas',
-    component: TareasComponent
-  },
-  {
-    path:'agregar-tarea',
-    component: AgregarTareaComponent
+    component: RegistroComponent
   }
 
 
- 
 ];
 
 @NgModule({

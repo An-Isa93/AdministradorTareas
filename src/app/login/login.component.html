@@ -2,6 +2,10 @@
 <ion-content [fullscreen]="true">
   <div class="container">
     <form [formGroup]="formLogin" (submit)="onSubmit()">
+      <div class="header">
+      <img src="assets/logos/LG.png" class="logo">
+      <h1 class="titulo">Administrador Tareas</h1>
+      </div>
       <ion-button shape="round" expand="full" class="btn-google" (click)="loginWithGoogle()"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVUWxgoGVSlsZFO23S42MQOHSXpx7PHW-81n97ZsGm4g&s" class="google-icon">Ingresar con Google</ion-button>
       <ion-input  formControlName="email" labelPlacement="stacked" label="Email" fill="outline" placeholder="email@domain.com"></ion-input>
       <ion-input formControlName="password" fill labelPlacement="stacked" fill="outline" type="password" label="Contraseña">
@@ -11,7 +15,9 @@
       <ion-button type="submit" shape="round" expand="full" class="btn-login">Ingresar</ion-button>
     </form>
   </div>
+
 </ion-content>
+
 
 
 

@@ -1,14 +1,10 @@
 <ion-app>
-  <ng-container *ngIf="isLoggedIn(); else loginOrRegisterPage">
-    <app-home></app-home>
-  </ng-container>
-  <ng-template #loginOrRegisterPage>
-    <ng-container *ngIf="showLogin; else registerPage">
-      <app-login (showRegister)="onShowRegister($event)"></app-login>
+    <ng-container *ngIf="isLoggedIn(); else showLogin">
       <ion-router-outlet></ion-router-outlet>
     </ng-container>
-    <ng-template #registerPage>
-      <app-registro *ngIf="showRegistro"></app-registro>
+    <ng-template #showLogin>
+      <app-login></app-login>
+      <ion-router-outlet></ion-router-outlet>
     </ng-template>
-  </ng-template>
-</ion-app>
+  </ion-app>
+  

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { UserService } from './user.service';
+import { Router } from '@angular/router';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -7,17 +8,23 @@ import { UserService } from './user.service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
- 
-  constructor(private userService: UserService) { }
   showRegistro: boolean = false;
   showLogin: boolean = true;
-  onShowRegister(event: boolean) {
-    this.showRegistro = event;
-    
+  constructor(private userService: UserService, private router: Router) { }
+  ngOnInit() {
+    // Redirigir según el estado de autenticación
+    this.userService.isLoggedInObservable().subscribe(isLoggedIn => {
+      if (isLoggedIn) {
+        this.router.navigate(['tabs']);
+      } else {
+        this.router.navigate(['login']);
+      }
+    });
   }
+
   isLoggedIn(): boolean {
     return this.userService.isLoggedIn();
   }
   title: string="Agenda Escolar";
-  ngOnInit() {}
+
 }
