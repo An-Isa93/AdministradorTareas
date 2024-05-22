@@ -9,12 +9,12 @@ import { TareasService } from '../services/tareas.service';
 export class Tab2Page {
 
 
-  nuevaTarea: Tarea = {nombre:'', materia: '', mes:'', anio:0, descripcion:''};
+  nuevaTarea: Tarea = {nombre:'', materia: '', fecha: new Date(), descripcion:''};
 
   constructor (private TareasService : TareasService) { }
   
   agregarTarea() {
     this.TareasService.agregarTarea(this.nuevaTarea);
-    this.nuevaTarea = { nombre: '', materia: '', descripcion: '', mes: '', anio: 0 };
+    this.nuevaTarea = {nombre: '', materia: '', descripcion: '', fecha: new Date()};
   }
 }

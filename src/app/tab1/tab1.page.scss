@@ -1,15 +1,18 @@
-ion-card-header {
-    display: flex;
-    justify-content: center;
+ion-content {
+    --ion-background-color: white;
 }
 
-ion-card-title {
-    width: 73%;
+ion-card {
+    padding: 10px;
+    background-color: white;
 }
+
 ion-icon{
     color:blue;
     margin-right: 1%;
+    font-size: 50px;
 }
+
 .forms {
     padding-left: 3%;
     padding-right: 3%;
@@ -24,14 +27,67 @@ ion-icon{
     padding: 5%;
 }
 
-.fechaTarjeta {
-    display: flex;
-}
-
 .eliminar {
     position: fixed;
     padding-left: 65%;
     padding-bottom: 15%;
     color: red;
     font-size: 15px;
+}
+
+ion-checkbox {
+    --size: 25px;
+    --checkbox-background-checked: white;
+  }
+  
+ion-checkbox::part(container) {
+    border-radius: 0px;
+    border: 2px solid black;
+}
+
+.tarjeta{
+    display: flex;
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+}
+
+.Fecha{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: black;
+}
+
+p {
+    margin: 0px;
+}
+
+.titulo{
+    flex: 1;
+    margin-left: 10px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nombre{
+    font-size: large;
+    color: black;
+}
+
+.materia{
+    color: #8d8686;
+}
+
+.Eliminar{
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
