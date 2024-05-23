@@ -15,8 +15,8 @@
       </div>
       
       <div class="Fecha">
-        <p>{{tarea.fecha | date: 'EEE dd'}}</p>
-        <p>{{tarea.fecha | date: 'MM-yy'}}</p>
+        <p>{{ tarea.fecha | date: 'EEEE' }}</p>
+        <p>{{tarea.fecha | date: 'dd-MM-yy'}}</p>
       </div>
 
       <div class="titulo">
@@ -25,7 +25,7 @@
       </div>
       
       <div class="Eliminar">
-        <ion-checkbox></ion-checkbox>
+        <ion-checkbox (ionChange)="tareasTerminadas(i)"></ion-checkbox>
       </div>
 
       <!--

@@ -13,13 +13,13 @@
       <ion-input label="Nombre de la tarea" label-placement="floating" fill="outline" name="nombre" [(ngModel)]="nuevaTarea.nombre"></ion-input>
       <br />
       <!-- Descripcion -->
-      <ion-label>Descripción:</ion-label>
+      <ion-label>Descripción</ion-label>
       <ion-textarea fill="outline" rows="3" name="descripcion" [(ngModel)]="nuevaTarea.descripcion"></ion-textarea>
       <br />
       <!-- Fecha de entrega -->
       <ion-label position="floating">Fecha de entrega</ion-label>
       <div class="fecha">
-        <ion-datetime presentation="date" [(ngModel)]="nuevaTarea.fecha"></ion-datetime>
+        <ion-datetime name="fecha" class="calendario" [(ngModel)]="nuevaTarea.fecha"></ion-datetime>
       </div>
       <br />
       <!-- Materia -->

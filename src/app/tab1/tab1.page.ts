@@ -15,8 +15,7 @@ export class Tab1Page {
     this.tareas = this.TareasService.obtenerTareas();
   }
 
-  eliminarTarea(index: number) {
-    console.log("Index a eliminar:", index);
-    this.TareasService.eliminarTarea(index);
+  tareasTerminadas(index: number) {
+    this.TareasService.tareasTerminadas(index);
   }
 }

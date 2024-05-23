@@ -4,6 +4,12 @@
 
 .fecha {
     display: flex;
+    padding-top: 10px
+}
+
+.calendario{
+    --placeholder-color: #76cfff; /* Color del texto de marcador de posición */
+    
 }
 
 .boton {

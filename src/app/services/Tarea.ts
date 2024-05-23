@@ -1,6 +1,6 @@
 export interface Tarea {
     nombre: string,
     materia: string,
-    fecha: Date,
+    fecha: string,
     descripcion: string;
 }
