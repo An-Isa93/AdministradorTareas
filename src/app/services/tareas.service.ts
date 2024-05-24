@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
+import { Firestore } from '@angular/fire/firestore';
+import { addDoc, collection } from 'firebase/firestore';
 import { Tarea } from './Tarea';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -9,13 +10,13 @@ export class TareasService {
   tareas: Tarea[] = [];
   tareasHechas: Tarea[] = [];
 
-  constructor() { 
+  constructor(private firestore: Firestore) { 
     this.tareas.push({ nombre: 'Terminar aplicación', descripcion: 'Agenda escolar', materia: 'Aplicaciones Móviles', fecha: '2024-05-24' }); //Tarea de ejemplo
   }
 
-  agregarTarea(tarea: Tarea) {
-    this.tareas.push(tarea);
-    console.log("Tareas:", this.tareas);
+  agregarTarea(tarea:Tarea){
+    const tareaNueva= collection(this.firestore,'Tareas');
+    return addDoc(tareaNueva,tarea);
   }
 
   obtenerTareas(): Tarea[] {

@@ -8,26 +8,26 @@
 
 <ion-content [fullscreen]="true">
   <div class="forms">
-    <form >
+    <form [formGroup]="formAgregar" (submit)="onSubmit()">
       <!-- Nombre de la tarea -->
-      <ion-input label="Nombre de la tarea" label-placement="floating" fill="outline" name="nombre" [(ngModel)]="nuevaTarea.nombre"></ion-input>
+      <ion-input label="Nombre de la tarea" formControlName="Nombre" label-placement="floating" fill="outline" name="nombre" ></ion-input>
       <br />
       <!-- Descripcion -->
       <ion-label>Descripción</ion-label>
-      <ion-textarea fill="outline" rows="3" name="descripcion" [(ngModel)]="nuevaTarea.descripcion"></ion-textarea>
+      <ion-textarea fill="outline" rows="3"  formControlName="Descripcion" name="descripcion"></ion-textarea>
       <br />
       <!-- Fecha de entrega -->
       <ion-label position="floating">Fecha de entrega</ion-label>
       <div class="fecha">
-        <ion-datetime name="fecha" class="calendario" [(ngModel)]="nuevaTarea.fecha"></ion-datetime>
+        <ion-datetime name="fecha" class="calendario"  formControlName="Fecha"></ion-datetime>
       </div>
       <br />
       <!-- Materia -->
-      <ion-input label="Materia" label-placement="floating" fill="outline" name="materia" [(ngModel)]="nuevaTarea.materia"></ion-input>
+      <ion-input label="Materia" label-placement="floating" fill="outline"  formControlName="materia" name="materia" ></ion-input>
       <br />
       <!-- Boton de agregar -->
       <div class="boton">
-        <ion-button (click)="agregarTarea()" class="botonAgregar" type="submit">Agregar Tarea</ion-button>
+        <ion-button  class="botonAgregar" type="submit">Agregar Tarea</ion-button>
       </div>
     </form>
   </div>
