@@ -1,5 +1,14 @@
 .forms {
-    padding: 10%;
+    margin: 2% auto;
+    border: 2px solid #d0d8d7;
+    align-items: center;
+    justify-content: center;
+    height: auto; 
+    max-width: 600px; 
+    width: 90%;
+    background: rgb(255, 253, 253);
+    border-radius: 20px;
+    padding: 2%;
 }
 
 .fecha {
@@ -15,4 +24,12 @@
 .boton {
     display: flex;
     justify-content: center;
+   
+    font-weight: bolder;
+    font-size: 15px;
 }
+ion-button{
+    --background: #212b29;
+    --color: white;
+}
+

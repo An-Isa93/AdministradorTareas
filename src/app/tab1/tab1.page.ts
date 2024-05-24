@@ -32,9 +32,9 @@ export class Tab1Page {
     });
     return await modal.present();
   }
-}
-/* 
-tareasTerminadas(index: number) {
-    this.TareasService.tareasTerminadas(index);
+
+ async deleteTarea(tarea: Tarea){
+   const response = await this.TareasService.deleteTarea(tarea);
+   console.log(response);
   }
-  }*/
+}

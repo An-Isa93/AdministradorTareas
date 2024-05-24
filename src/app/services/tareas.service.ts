@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Firestore, collectionData } from '@angular/fire/firestore';
-import { addDoc, collection } from 'firebase/firestore';
+import { addDoc, collection, deleteDoc, doc } from 'firebase/firestore';
 import { Observable } from 'rxjs';
 import { Tarea } from './Tarea';
 @Injectable({
@@ -27,10 +27,15 @@ export class TareasService {
     const tareaNueva= collection(this.firestore,'Tareas');
     return collectionData(tareaNueva,{idField:'id'}) as Observable<Tarea[]>;
   }
-
+  
   tareasTerminadas(index: number) {
     const tareaTerminada = this.tareas.splice(index, 1)[0]; //se crea un objeto con el contenido de la tarea eliminada
     this.tareasHechas.push(tareaTerminada); //Se agrega la tarea eliminada al areglo de Tareas Hechas
     console.log('Tareas terminadas:', this.tareasHechas);
+  }
+
+  deleteTarea(tarea:Tarea){
+    const tareaDocRef = doc(this.firestore,`Tareas/${tarea.id}`);
+    return deleteDoc(tareaDocRef);
   }
 }
