@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
-import { Tarea } from '../services/Tarea';
 import { TareasService } from '../services/tareas.service';
 
 @Component({
@@ -12,7 +11,7 @@ import { TareasService } from '../services/tareas.service';
 export class Tab2Page {
   formAgregar:FormGroup;
 
-  nuevaTarea: Tarea = {nombre:'', materia: '', fecha: '', descripcion:''};
+ /* nuevaTarea: Tarea = {nombre:'', materia: '', fecha: '', descripcion:''};*/
 
 
   constructor (private TareasService : TareasService, private alertController: AlertController) {

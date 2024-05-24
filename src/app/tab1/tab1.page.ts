@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import { Tarea } from '../services/Tarea';
 import { TareasService } from '../services/tareas.service';
-import { ModalController } from '@ionic/angular';
 import { TareasComponent } from '../tareas/tareas.component';
-
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -14,14 +13,16 @@ export class Tab1Page {
   
   constructor(private TareasService : TareasService, private modalCtrl: ModalController) {}
   
-  ngOnInit() {
-    this.tareas = this.TareasService.obtenerTareas();
+  ngOnInit(): void {
+    /*this.tareas = this.TareasService.obtenerTareas();*/
+    this.TareasService.getTareas().subscribe(tareas => {
+      console.log(tareas); // Verifica la estructura aquí
+      tareas.forEach(tarea => console.log(tarea)); // Verifica cada tarea
+      this.tareas = tareas;
+    });
+    
   }
-
-  tareasTerminadas(index: number) {
-    this.TareasService.tareasTerminadas(index);
-  }
-
+ 
   async openModal(tarea: Tarea) {
     const modal = await this.modalCtrl.create({
       component: TareasComponent,
@@ -32,3 +33,8 @@ export class Tab1Page {
     return await modal.present();
   }
 }
+/* 
+tareasTerminadas(index: number) {
+    this.TareasService.tareasTerminadas(index);
+  }
+  }*/

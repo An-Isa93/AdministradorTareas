@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Firestore } from '@angular/fire/firestore';
+import { Firestore, collectionData } from '@angular/fire/firestore';
 import { addDoc, collection } from 'firebase/firestore';
+import { Observable } from 'rxjs';
 import { Tarea } from './Tarea';
 @Injectable({
   providedIn: 'root'
@@ -11,16 +12,20 @@ export class TareasService {
   tareasHechas: Tarea[] = [];
 
   constructor(private firestore: Firestore) { 
-    this.tareas.push({ nombre: 'Terminar aplicación', descripcion: 'Agenda escolar', materia: 'Aplicaciones Móviles', fecha: '2024-05-24' }); //Tarea de ejemplo
+    /*this.tareas.push({ nombre: 'Terminar aplicación', descripcion: 'Agenda escolar', materia: 'Aplicaciones Móviles', fecha: '2024-05-24' }); //Tarea de ejemplo
+    */  
   }
 
   agregarTarea(tarea:Tarea){
     const tareaNueva= collection(this.firestore,'Tareas');
     return addDoc(tareaNueva,tarea);
   }
-
   obtenerTareas(): Tarea[] {
     return this.tareas;
+  }
+  getTareas(): Observable<Tarea[]>{
+    const tareaNueva= collection(this.firestore,'Tareas');
+    return collectionData(tareaNueva,{idField:'id'}) as Observable<Tarea[]>;
   }
 
   tareasTerminadas(index: number) {

@@ -8,24 +8,30 @@
 
 <ion-content [fullscreen]="true">  
   <div class="forms">
-    <ion-card *ngFor="let tarea of tareas; let i = index" class="tarjeta" (click)="openModal(tarea)">
-      
-      <div class="icon">
-        <ion-icon name="reader-outline"></ion-icon>
+    <ion-card *ngFor="let tarea of tareas; " class="tarjeta">
+  
+    <div class="icon">
+        <ion-icon name="reader-outline" ></ion-icon>
       </div>
       
       <div class="Fecha">
-        <p>{{ tarea.fecha | date: 'EEEE' }}</p>
-        <p>{{tarea.fecha | date: 'dd-MM-yy'}}</p>
+        <p>{{tarea.Fecha | date: 'EEEE' }}</p>
+        <p>{{tarea.Fecha | date: 'dd-MM-yy'}}</p>
       </div>
 
       <div class="titulo">
-        <p class="nombre">{{tarea.nombre}}</p>
-        <p class="materia">{{tarea.materia}}</p>
+        <p class="nombre">{{tarea.Nombre}}</p>
+        <p class="materia">{{tarea.Materia}}</p>
       </div>
-      
+      <ion-button class="modalbutton" (click)="openModal(tarea)" >
+        <div class="icon-add">
+          <ion-icon  slot="icon-only" name="add-outline"></ion-icon>
+        </div>
+      </ion-button>
+    
       <div class="Eliminar">
-        <ion-checkbox (ionChange)="tareasTerminadas(i)"></ion-checkbox>
+ 
+   <ion-checkbox><!--(ionChange)="tareasTerminadas(i)"--></ion-checkbox>
       </div>
 
     </ion-card>

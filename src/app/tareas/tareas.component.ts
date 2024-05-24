@@ -1,7 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Tarea } from '../services/Tarea';
-import { TareasService } from '../services/tareas.service';
+import { Component, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { Tarea } from '../services/Tarea';
 
 @Component({
   selector: 'app-tareas',
