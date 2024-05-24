@@ -1,41 +1,37 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Agenda Escolar
-    </ion-title>
+    <ion-title>Detalles de la tarea</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="medium" (click)="cerrar()">Cerrar</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">  
-  <div class="forms">
-    <ion-card *ngFor="let tarea of tareas; let i = index">
+<ion-content>
+  <ion-card *ngIf="tarea" class="tarjeta">
+    
+    <div class="encabezado">
+      <div class="icon">
+        <ion-icon name="reader-outline"></ion-icon>
+      </div>
+      <div class="titulo">
+        <ion-card-title>{{tarea.nombre}}</ion-card-title>
+      </div>
+    </div>
+    
+    <div class="fecha">
+      <p><strong><span style="color: blue;">Fecha:</span></strong> {{tarea.fecha | date: 'EEEE dd-MM-yy'}}</p>
+    </div>
 
-      <ion-card-header>
-        
-        <ion-card-subtitle>{{tarea.materia}}</ion-card-subtitle>
-        <br />
-        <ion-card-title><ion-icon name="reader-outline"></ion-icon>{{tarea.nombre}}</ion-card-title>
-        <ion-button (click)="eliminarTarea(i)" fill="clear" class="eliminar">Eliminar</ion-button>
-      </ion-card-header> 
-      
-      <ion-card-content>
-        <div class="fechaTarjeta">
-          <p class="txt">Fecha:  </p>
-          <p class="fecha">{{tarea.mes}} {{tarea.anio}}</p>
-        </div>
-      </ion-card-content>
+    <div class="materia">
+      <p><strong><span style="color: blue;">Materia:</span></strong> {{tarea.materia}}</p>
+    </div>
 
-      <ion-accordion-group>
-        <ion-accordion value="detalles">
-          <ion-item slot="header" color="light">
-            <ion-label class="verMas">+ Ver más detalles</ion-label>
-          </ion-item>
-          <div class="descripcion" slot="content">{{tarea.descripcion}}</div>
-         
-        </ion-accordion>
-      </ion-accordion-group>
-    </ion-card>
-  </div>
+    <div>
+      <p><strong><span style="color: blue;">Descripción de la tarea:</span></strong> {{ tarea.descripcion }}</p>
+    </div>
+
+  </ion-card>
 
 </ion-content>
 

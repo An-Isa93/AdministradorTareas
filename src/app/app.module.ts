@@ -11,10 +11,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 @NgModule({
-  declarations: [AppComponent,LoginComponent,RegistroComponent],
+  declarations: [AppComponent,LoginComponent,RegistroComponent, TareasComponent],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 
