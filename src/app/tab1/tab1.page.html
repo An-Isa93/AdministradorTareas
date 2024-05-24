@@ -8,7 +8,7 @@
 
 <ion-content [fullscreen]="true">  
   <div class="forms">
-    <ion-card *ngFor="let tarea of tareas; let i = index" class="tarjeta">
+    <ion-card *ngFor="let tarea of tareas; let i = index" class="tarjeta" (click)="openModal(tarea)">
       
       <div class="icon">
         <ion-icon name="reader-outline"></ion-icon>
@@ -27,16 +27,6 @@
       <div class="Eliminar">
         <ion-checkbox (ionChange)="tareasTerminadas(i)"></ion-checkbox>
       </div>
-
-      <!--
-      <ion-accordion-group>
-        <ion-accordion value="detalles">
-          <ion-item slot="header" color="light">
-            <ion-label class="verMas">+ Ver más detalles</ion-label>
-          </ion-item>
-          <div class="descripcion" slot="content">{{tarea.descripcion}}</div>
-        </ion-accordion>
-      </ion-accordion-group>-->
 
     </ion-card>
   </div>

@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { authGuard } from './auth/auth.guard';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
+import { TareasComponent } from './tareas/tareas.component';
 
 const routes: Routes = [
   {
@@ -17,8 +18,11 @@ const routes: Routes = [
   {
     path:'registro',
     component: RegistroComponent
+  },
+  {
+    path:'tareas',
+    component: TareasComponent
   }
-
 
 ];
 

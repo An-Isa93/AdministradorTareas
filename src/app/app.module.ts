@@ -11,9 +11,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
+import { TareasComponent } from './tareas/tareas.component';
 
 @NgModule({
-  declarations: [AppComponent,LoginComponent,RegistroComponent],
+  declarations: [AppComponent,LoginComponent,RegistroComponent, TareasComponent],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 

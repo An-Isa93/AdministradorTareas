@@ -1,25 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import { Tarea } from '../Tarea';
-import { TareasService } from '../tareas.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { Tarea } from '../services/Tarea';
+import { TareasService } from '../services/tareas.service';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tareas',
   templateUrl: './tareas.component.html',
   styleUrls: ['./tareas.component.scss'],
 })
-export class TareasComponent  implements OnInit {
+export class TareasComponent  {
 
-  tareas: Tarea[] = [];
+  @Input() tarea: Tarea | undefined;
   
-  constructor (private TareasService : TareasService) { }
-
-  ngOnInit() {
-    this.tareas = this.TareasService.obtenerTareas();
-  }
-
-  eliminarTarea(index: number) {
-    console.log("Index a eliminar:", index);
-    this.TareasService.eliminarTarea(index);
+  constructor( private modalCtrl: ModalController) {}
+  
+  
+  cerrar() {
+    return this.modalCtrl.dismiss();
   }
 
 }

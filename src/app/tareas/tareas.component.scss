@@ -1,37 +1,21 @@
-ion-card-header {
+.tarjeta{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 5%;
+    margin: 6%;
 }
 
-ion-card-title {
-    width: 73%;
+.encabezado {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 5%;
 }
+
 ion-icon{
     color:blue;
     margin-right: 1%;
-}
-.forms {
-    padding-left: 3%;
-    padding-right: 3%;
-}
-
-.verMas {
-    display: flex;
-    justify-content: center;
-}
-
-.descripcion {
-    padding: 5%;
-}
-
-.fechaTarjeta {
-    display: flex;
-}
-
-.eliminar {
-    position: fixed;
-    padding-left: 65%;
-    padding-bottom: 15%;
-    color: red;
-    font-size: 15px;
+    font-size: 50px;
 }
