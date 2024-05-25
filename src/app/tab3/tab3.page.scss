@@ -15,11 +15,12 @@ h2{
     font-size: 50px;
     font-weight: bolder;
     margin-left: 5%;
+    margin-bottom: 0px;
 }
 
 p{
     margin-left: 3%;
-    font-size: 25px;
+    font-size: 23px;
 }
 
 .icon{
@@ -33,4 +34,24 @@ ion-button {
     --color: white;
     font-weight: bolder;
     font-size: 15px;
+}
+
+.actualizarFoto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imagen{
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    border-radius: 100%;
+    margin: 5%;
+}
+
+input {
+    font-size: 13px;
 }
