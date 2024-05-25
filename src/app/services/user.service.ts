@@ -1,44 +1,54 @@
 import { Injectable } from '@angular/core';
-import { Auth, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup } from '@angular/fire/auth';
-import { Observable } from 'rxjs';
-import { authState } from '@angular/fire/auth';
-import { map } from 'rxjs/operators';
+import { Auth, GoogleAuthProvider, authState, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup } from '@angular/fire/auth';
 import { signOut } from 'firebase/auth';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { User } from './user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private loggedIn = false;
-  constructor(private auth:Auth) {}
-  
-  register({email,password}:any){
-    this.loggedIn = true;
-    return createUserWithEmailAndPassword(this.auth,email, password);
+  constructor(private auth: Auth) {}
+
+  register({ email, password }: any) {
+    return createUserWithEmailAndPassword(this.auth, email, password);
   }
 
-  login({email,password}:any){
-    this.loggedIn = true;
-    return signInWithEmailAndPassword(this.auth, email,password);
-    
+  login({ email, password }: any) {
+    return signInWithEmailAndPassword(this.auth, email, password);
   }
 
-  loginWithGoogle(){
-    this.loggedIn = true;
+  loginWithGoogle() {
     return signInWithPopup(this.auth, new GoogleAuthProvider());
-   
   }
-  logout(){
+
+  logout() {
     return signOut(this.auth);
   }
+
   isLoggedInObservable(): Observable<boolean> {
     return authState(this.auth).pipe(map(user => !!user));
   }
+
+  getUser(): Observable<User | null> {
+    return authState(this.auth).pipe(
+      map(user => {
+        if (user) {
+          return {
+            uid: user.uid,
+            email: user.email,
+            displayName: user.displayName,
+            photoURL: user.photoURL
+          };
+        } else {
+          return null;
+        }
+      })
+    );
+  }
+
   isLoggedIn(): boolean {
     return this.auth.currentUser !== null;
   }
-  
-  
-  
-
 }

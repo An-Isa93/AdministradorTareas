@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { AlertController } from '@ionic/angular';
+import { Foto } from '../services/foto';
 import { TareasService } from '../services/tareas.service';
 
 @Component({
@@ -10,9 +12,7 @@ import { TareasService } from '../services/tareas.service';
 })
 export class Tab2Page {
   formAgregar:FormGroup;
-
- /* nuevaTarea: Tarea = {nombre:'', materia: '', fecha: '', descripcion:''};*/
-
+  public fotos: Foto[] = [];
 
   constructor (private TareasService : TareasService, private alertController: AlertController) {
     this.formAgregar= new FormGroup({
@@ -22,20 +22,22 @@ export class Tab2Page {
       Materia: new FormControl()
     })
    }
-  
- /* async agregarTarea() {
-    if (this.formularioValido()){
-      const response= await this.TareasService.agregarTarea(this.nuevaTarea);
-      this.nuevaTarea = {nombre: '', materia: '', fecha: '', descripcion: ''};
-      console.log(response);
-    }  else {
-      await this.alertaCampoIncompleto();
-    }
-  }*/
-/*
-  formularioValido(): boolean {
-    return this.nuevaTarea.nombre.trim() !== '' && this.nuevaTarea.fecha !== '';
-  }*/
+   async tomarFoto() {
+    const capturedPhoto = await Camera.getPhoto({
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Camera,
+      quality: 100
+    });
+
+    // Crear un objeto Foto con las rutas de archivo y web de la foto capturada
+    const nuevaFoto: Foto = {
+      filepath: capturedPhoto?.path || '',
+      webViewPath: capturedPhoto?.webPath || ''
+    };
+
+    // Llamar al método addNewToGallery() y pasar el objeto Foto como argumento
+    await this.TareasService.addNewToGallery(nuevaFoto);
+  }
 
   async alertaCampoIncompleto() {
     const alert = await this.alertController.create({
@@ -46,9 +48,17 @@ export class Tab2Page {
 
     await alert.present();
   }
-  onSubmit(){
+ async onSubmit(){
     console.log(this.formAgregar.value);
     this.TareasService.agregarTarea(this.formAgregar.value);
+
+      const alert = await this.alertController.create({
+        message: 'Tarea agregada con éxito :D',
+        buttons: ['Aceptar'],
+      });
+
+      await alert.present();
+      this.formAgregar.reset();
   }
 
 }

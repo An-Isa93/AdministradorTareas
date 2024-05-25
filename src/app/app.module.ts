@@ -13,8 +13,8 @@ import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { TareasComponent } from './tareas/tareas.component';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-
-
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
+defineCustomElements(window);
 @NgModule({
   declarations: [AppComponent,LoginComponent,RegistroComponent, TareasComponent],
   imports: [
@@ -28,6 +28,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
     provideFirebaseApp(() => initializeApp({"projectId":"login-a722a","appId":"1:254412298973:web:8784472266aed07642d934","storageBucket":"login-a722a.appspot.com","apiKey":"AIzaSyDuT75sNfgg2737dZ4ULGCxot7yCOhyc4g","authDomain":"login-a722a.firebaseapp.com","messagingSenderId":"254412298973","measurementId":"G-9TT3443T4P"})),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
+    
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Firestore, collectionData } from '@angular/fire/firestore';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { addDoc, collection, deleteDoc, doc } from 'firebase/firestore';
 import { Observable } from 'rxjs';
 import { Tarea } from './Tarea';
+import { Foto } from './foto';
 @Injectable({
   providedIn: 'root'
 })
@@ -10,11 +12,24 @@ export class TareasService {
 
   tareas: Tarea[] = [];
   tareasHechas: Tarea[] = [];
+  fotos: Foto[]=[];
 
   constructor(private firestore: Firestore) { 
     /*this.tareas.push({ nombre: 'Terminar aplicación', descripcion: 'Agenda escolar', materia: 'Aplicaciones Móviles', fecha: '2024-05-24' }); //Tarea de ejemplo
     */  
   }
+  public async addNewToGallery(foto: Foto) {    
+ 
+    
+
+    // Add the photo to Firestore
+    const fotosCollection = collection(this.firestore, 'Fotos');
+    const docRef = await addDoc(fotosCollection, foto);
+    
+    // Return the document reference
+    return docRef;
+}
+
 
   agregarTarea(tarea:Tarea){
     const tareaNueva= collection(this.firestore,'Tareas');

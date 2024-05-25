@@ -30,6 +30,10 @@
     <div>
       <p><strong><span style="color: blue;">Descripción de la tarea:</span></strong> {{ tarea.Descripcion }}</p>
     </div>
+    <div *ngIf="tarea.webViewPath">
+      <img [src]="tarea.webViewPath" alt="Foto de la tarea">
+    </div>
+
 
   </ion-card>
 

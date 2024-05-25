@@ -10,6 +10,7 @@ import { UserService } from './services/user.service';
 export class AppComponent {
   showRegistro: boolean = false;
   showLogin: boolean = true;
+
   constructor(private userService: UserService, private router: Router) { }
   ngOnInit() {
     // Redirigir según el estado de autenticación

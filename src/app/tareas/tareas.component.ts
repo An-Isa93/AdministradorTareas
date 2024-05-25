@@ -7,6 +7,8 @@ import { Tarea } from '../services/Tarea';
   templateUrl: './tareas.component.html',
   styleUrls: ['./tareas.component.scss'],
 })
+
+
 export class TareasComponent  {
 
   @Input() tarea: Tarea | undefined;
